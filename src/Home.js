@@ -1,10 +1,11 @@
+
 import { useState } from "react";
 import "./Home.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Task from "./components/Task";
 
-function Home() {
+function Home({name}) {
   const [text, setText] = useState("");
   const [tasks, setTasks] = useState([
     "いちごを食べる",
@@ -21,7 +22,7 @@ function Home() {
 
   return (
     <div>
-      <Header />
+      <Header name={name} />
 
       <input value={text}/>
       <button>追加</button>
