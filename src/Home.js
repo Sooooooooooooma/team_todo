@@ -8,15 +8,23 @@ import Task from "./components/Task";
 function Home({name}) {
   const [text, setText] = useState("");
   const [tasks, setTasks] = useState([
-    "いちごを食べる",
-    "白菜を買いに行く",
-    "窓を掃除する",
-    "パンを焼く",
   ]);
 
-  const deleteTask = () => {
-  
-
+  const deleteTask = (index) => {
+    const newTasks=tasks.filter((task,i)=>{
+        return i !==index;
+    });
+    setTasks(newTasks);
+}
+const handleChange=(event)=>{
+setText(event.target.value);
+ 
+}
+const handleAdd=()=>{
+    if(text.trim()==="")return;
+    setTasks([...tasks,text])
+    setText("");
+    console.log(tasks)
 }
 
 
@@ -24,8 +32,8 @@ function Home({name}) {
     <div>
       <Header name={name} />
 
-      <input className="textarea" value={text}/>
-      <button className="add">追加</button>
+      <input className="textarea" value={text} onChange={(event)=>handleChange(event)}/>
+      <button className="add" onClick={handleAdd}>追加</button>
 
       <ul >
         {tasks.map((task,index) => (
