@@ -1,8 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const Login = () => {
+import { Link } from 'react-router-dom';
+import Header from './components/Header';
+
+
+const Login = ({catchName}) => {
+  const [userName,setUserName] = useState("");
+  const getUserName = (e) => setUserName(e.target.value);
+
   return (
-    <div>Login</div>
+    <>
+      <Header/>
+      <div>Login</div>
+      <input type='text' onChange={getUserName} id='nameArea'/>
+      <Link to='/Home' onClick={catchName(userName)}>login</Link>
+    </>
   )
 }
 

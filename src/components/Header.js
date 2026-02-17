@@ -1,8 +1,9 @@
-import React from 'react'
-
-const Header = () => {
+const Header = ({name}) => {
   return (
-    <div>Header</div>
+    <>
+      <h1>Todo List</h1>
+      <button onClick={()=> alert("hello "+name+"!")}>ユーザー情報</button>
+    </>
   )
 }
 

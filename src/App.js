@@ -5,8 +5,8 @@ import Task from "./components/Task";
 import { useState } from "react";
 
 function App() {
-  const[name,setName]=useState("")
-  const setUserName = (e) => setName(e.target.value);
+  const[name,setName]=useState("");
+  const setUserName = (userName) => setName(userName);
   return (
     <BrowserRouter>
       <Routes>
