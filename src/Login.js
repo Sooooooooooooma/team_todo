@@ -10,7 +10,7 @@ const Login = ({catchName}) => {
 
   return (
     <>
-      <Header/>
+      <Header name={""}/>
       <div>Login</div>
       <input type='text' onChange={getUserName} id='nameArea'/>
       <Link to='/Home' onClick={catchName(userName)}>login</Link>
