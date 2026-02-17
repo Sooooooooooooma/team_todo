@@ -1,9 +1,10 @@
 import "./Task.css";
 
-function Task({ task, onDelete }) {
+function Task({ task, handleDelete }) {
   return (
-    <li>
+    <li key={handleDelete}>
       {task}
+      <button onClick={()=>handleDelete(handleDelete)}>削除</button>
     </li>
   );
 }
