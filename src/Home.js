@@ -14,7 +14,10 @@ function Home() {
   ]);
 
   const deleteTask = () => {
-  }
+  
+
+}
+
 
   return (
     <div>
@@ -24,8 +27,8 @@ function Home() {
       <button>追加</button>
 
       <ul>
-        {tasks.map((task) => (
-          <Task key={task.id} task={task} onDelete={deleteTask} />
+        {tasks.map((task,index) => (
+          <Task key={index} task={task} handleDelete={()=>deleteTask(index)} />
         ))}
       </ul>
 
