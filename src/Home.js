@@ -24,10 +24,10 @@ function Home({name}) {
     <div>
       <Header name={name} />
 
-      <input value={text}/>
-      <button>追加</button>
+      <input className="textarea" value={text}/>
+      <button className="add">追加</button>
 
-      <ul>
+      <ul >
         {tasks.map((task,index) => (
           <Task key={index} task={task} handleDelete={()=>deleteTask(index)} />
         ))}
