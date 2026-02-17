@@ -6,10 +6,11 @@ import { useState } from "react";
 
 function App() {
   const[name,setName]=useState("")
+  const setUserName = (e) => setName(e.target.value);
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Login catchName={setUserName} />} />
         <Route path="/home" element={<Home name={name} />} />
         {/* <Route path="/task" element={<Task/>}></Route> */}
       </Routes>
