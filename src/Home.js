@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Home.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -7,8 +7,13 @@ import Task from "./components/Task";
 
 function Home({name}) {
   const [text, setText] = useState("");
-  const [tasks, setTasks] = useState([
-  ]);
+  const [tasks, setTasks] = useState(()=>{
+    const saved =localStorage.getItem("tasks");
+    if(saved){
+        return JSON.parse(saved);
+    }
+    return[];
+  });
 
   const deleteTask = (index) => {
     const newTasks=tasks.filter((task,i)=>{
@@ -26,6 +31,10 @@ const handleAdd=()=>{
     setText("");
     console.log(tasks)
 }
+
+useEffect(()=>{
+    localStorage.setItem("tasks",JSON.stringify(tasks));
+},[tasks]);
 
 
   return (
