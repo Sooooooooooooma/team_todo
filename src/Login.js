@@ -21,7 +21,7 @@ const Login = ({catchName}) => {
     <>
       <Header name={""}/>
       <div className='content'>
-        <p>Login</p>
+        Login
         <input type='text' onChange={getUserName} id='nameArea' placeholder='ユーザー名'/>
         <button onClick={allow}>アクセス</button>
       </div>
