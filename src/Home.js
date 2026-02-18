@@ -26,8 +26,11 @@ setText(event.target.value);
  
 }
 const handleAdd=()=>{
-    if(text.trim()==="")return;
+    if(text.trim()!=""){
     setTasks([...tasks,text])
+}else{
+    alert("文字を入力してください");
+}
     setText("");
     console.log(tasks)
 }
