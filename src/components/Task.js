@@ -5,7 +5,7 @@ function Task({ task, handleDelete }) {
     <li key={handleDelete}>
       {task}
       <button onClick={()=>handleDelete(handleDelete)}>削除</button>
-      <button >編集</button>
+      {/* <button >編集</button> */}
     </li>
   );
 }

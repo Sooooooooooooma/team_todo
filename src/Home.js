@@ -7,6 +7,7 @@ import Task from "./components/Task";
 
 function Home({name}) {
   const [text, setText] = useState("");
+  const [editingIndex,setEditingIndex]=useState(null);
   const [tasks, setTasks] = useState(()=>{
     const saved =localStorage.getItem("tasks");
     if(saved){
@@ -39,6 +40,11 @@ useEffect(()=>{
     localStorage.setItem("tasks",JSON.stringify(tasks));
 },[tasks]);
 
+// const handleEdit =(index)=>{
+//     setText(tasks[index]);
+//     setEditingIndex(index);
+// };
+
 
   return (
     <div>
@@ -49,7 +55,10 @@ useEffect(()=>{
 
       <ul >
         {tasks.map((task,index) => (
-          <Task key={index} task={task} handleDelete={()=>deleteTask(index)} />
+          <Task key={index}
+           task={task}
+            handleDelete={()=>deleteTask(index)} 
+            handleEdit={()=>handleEdit(index)} />
         ))}
       </ul>
 
