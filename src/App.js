@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login catchName={setUserName} />} />
         <Route path="/home" element={<Home name={name} />} />
-        {/* <Route path="/task" element={<Task/>}></Route> */}
+        <Route path="/task" element={<Task/>}></Route>
       </Routes>
     </BrowserRouter>
   );

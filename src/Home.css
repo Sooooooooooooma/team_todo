@@ -1,5 +1,53 @@
-.textarea{color: blue;
+.textarea{
+    
+    width: 80%;           /* 横幅を親要素いっぱいに */
+  padding: 12px 16px;    /* 内側の余白をたっぷり取る */
+  font-size: 18px;       /* 文字を大きくして読みやすく */
+  border: 2px solid #ddd;
+  border-radius: 8px;    /* 角を丸くして柔らかい印象に */
+  outline: none;         /* デフォルトの青い枠線を消す */
+  transition: all 0.3s;  /* 変化をスムーズに */
+  box-sizing: border-box; /* paddingを含めたサイズ計算にする */
+  margin: 4px;
+}
+
+.textarea:focus{
+    border-color: #4a90e2; /* 枠線の色を変える */
+  box-shadow: 0 0 8px rgba(74, 144, 226, 0.2); /* ぼんやり光らせる */
+  background-color: #fff;
+}
+/* .add:active{ */
+    /* background-color:#66aefb; */
+    /* padding-left: 8px; */
+    
 
 
+.add{
+  /* 横幅の指定（入力欄が80%なら残りの20%弱を占める） */
+  
+  
+  /* サイズと文字の調整 */
+  padding: 0 30px;      /* 左右の余白を広げて大きく見せる */
+  font-size: 18px;      /* 文字自体を大きく */
+  font-weight: bold;    /* 文字を太くして目立たせる */
+  margin: 4px;
+  
+  /* 見た目の装飾 */
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px 8px 8px 8px;
+  cursor: pointer;
+  transition: transform 0.1s, background-color 0.3s; /* 動きを滑らかに */
+  height: 48px;
+}
 
+/* ホバー時の演出：少し色を濃くする */
+.add:hover {
+  background-color: #357abd;
+}
+
+/* クリックした瞬間に少し小さくして「押した感」を出す */
+.add:active {
+  transform: scale(0.95);
 }

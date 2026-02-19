@@ -7,7 +7,7 @@ import Task from "./components/Task";
 
 function Home({name}) {
   const [text, setText] = useState("");
-  const [editingIndex,setEditingIndex]=useState(null);
+//   const [editingIndex,setEditingIndex]=useState(null);
   const [tasks, setTasks] = useState(()=>{
     const saved =localStorage.getItem("tasks");
     if(saved){
@@ -58,7 +58,7 @@ useEffect(()=>{
           <Task key={index}
            task={task}
             handleDelete={()=>deleteTask(index)} 
-            handleEdit={()=>handleEdit(index)} />
+            />
         ))}
       </ul>
 
