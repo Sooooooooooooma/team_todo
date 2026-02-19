@@ -23,6 +23,7 @@ const Footer = () => {
           </div>
         );
       })}
+      <a href="/">ログアウト</a>
     </dl>
   )
 }

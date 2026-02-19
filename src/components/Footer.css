@@ -1,7 +1,13 @@
 dt{
     border: 1px solid black;
+    background-color: white;
 }
 dd{
     border: 1px solid gray;
     background-color: azure;
+}
+dl{
+    font-size: 8px;
+    position: sticky;
+    bottom: 0;
 }
