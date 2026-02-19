@@ -10,10 +10,6 @@ const Footer = () => {
   ];
   const [showId,setShowId] = useState(null);
   return (
-    <>
-    <div onClick={()=>setShowId(null)}>
-      hello 
-    </div>
     <dl>
       {credits.map((credit,index)=>{
         const showControre = (index) => {
@@ -28,7 +24,6 @@ const Footer = () => {
         );
       })}
     </dl>
-    </>
   )
 }
 
