@@ -9,7 +9,7 @@ function Home({name}) {
   const [text, setText] = useState("");
 //   const [editingIndex,setEditingIndex]=useState(null);
   const [tasks, setTasks] = useState(()=>{
-    const saved =localStorage.getItem("tasks");
+    const saved =localStorage.getItem(`tasks_${name}`);
     if(saved){
         return JSON.parse(saved);
     }
@@ -27,7 +27,7 @@ setText(event.target.value);
  
 }
 const handleAdd=()=>{
-    if(text.trim()!=""){
+    if(text.trim()!==""){
     setTasks([...tasks,text])
 }else{
     alert("文字を入力してください");
@@ -37,8 +37,8 @@ const handleAdd=()=>{
 }
 
 useEffect(()=>{
-    localStorage.setItem("tasks",JSON.stringify(tasks));
-},[tasks]);
+    localStorage.setItem(`tasks_${name}`,JSON.stringify(tasks));
+},[tasks,name]);
 
 // const handleEdit =(index)=>{
 //     setText(tasks[index]);

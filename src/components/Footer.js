@@ -5,7 +5,7 @@ const Footer = () => {
   // creditsを書き換えると表示内容が変わります。
   const credits = [
     {"name":"ta2bey371","text":"hello world!"},
-    {"name":"test_name","text":"test_text"},
+    {"name":"Sooooooooooooma","text":"名前は安川蒼真です。「そうま」と呼んでください。機能モニターを買いました。今年の抱負は単位を落とさないことと彼女を作ること。"},
     {"name":"test_name","text":"test_text"},
   ];
   const [showId,setShowId] = useState(null);
